@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>STAFF</title>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>-->
+<style>
+    table ,td , th  {
+        border : 1px solid black
+    }
+    table {
+        border-collapse: collapse
+    }
+    th,td {
+        padding: 11px;
+        text-align: center
+    }
+</style>
+
+      
+      <div class="tab-content" ng-controller="MainController as ctrl">
+          <div id="login" style="display: block">
+            <form >
+              <div class="field-wrap" ng-if="!ctrl.isExam">
+                    <table>
+                  <tr>
+                      <th>ID </th>
+                      <th>Date</th>
+                      <th>Name</th>
+                      <!--<th>id</th>
+                      <th>type</th>
+                      <th>Looked Into ? </th>-->
+                  </tr>
+
+                  <tr ng-repeat="x in ctrl.examview">
+                      <td>{{x.eid}}</td>
+                      <td>{{x.exam_date}}</td>
+                      <td>{{x.name}}</td>
+                      <!--<td>{{x.complaint_id}}</td>
+                      <td>{{x.complaint_type}}</td>
+                      <td>
+                          <button ng-click = "ctrl.complaint(x.complaint_id)">Look Into </button>
+                      </td>
+-->
+                  </tr>
+                  </table>
+              </div>
+                <div class></div>
+
+            </form>
+      </div>
+         </div>
+
+</body>
+</html>

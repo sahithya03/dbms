@@ -1,0 +1,127 @@
+
+
+<body>
+  <div class="form" ng-controller="MainController as ctrl">
+      
+	      <h1>ADMINISTRATOR</h1>
+	  
+      <ul class="tab-group">
+        <li class="tab active" ng-click="ctrl.tabs  = false"><a>POPULATE INVENTORY</a></li>
+        <li class="tab" ng-click="ctrl.tabs  = true"><a >HIRE STAFF</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup" style="display: block" ng-if="!ctrl.tabs">
+          
+          <form  >
+          
+
+            <div class="field-wrap">
+              <div ng-if="!ctrl.update">
+            <label>
+              Quantity to be added<span class="req">*</span>
+            </label>
+            <input ng-model = "ctrl.cylindercount" type="text"required autocomplete="off" name="quantityToAdd"/>
+                <br>
+                <button ng-click ="ctrl.populateinventory()" type="submit" class="button button-block" name="addToInventory"/>add to inventory</button>
+              </div>
+              <div ng-if="ctrl.update">
+                <br><br>
+                <label><h3>Inventory Updated!!</h3></label>
+              </div>
+          </div>
+          
+
+          </form>
+
+        </div>
+
+        <div id="login" ng-if="ctrl.tabs" style="display: block">    <!-- -->
+          <div id="isstaff" ng-if="!ctrl.isstaffhired">
+          <h1>Enter staff Details</h1>
+          <div>
+          
+
+            <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input ng-model ="ctrl.name" type="text" required autocomplete="off" name="sFirstName" />
+            </div>
+
+
+
+			<div class="top-row">
+            <div class="field-wrap">
+              <label>
+                bank name<span class="req">*</span>
+              </label>
+              <input ng-model =" ctrl.bank" type="text" required autocomplete="off" name="bankName"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                gender<span class="req">*</span>
+              </label>
+              <input ng-model="ctrl.gender" type="text"required autocomplete="off" name="gender"/>
+            </div>
+          </div>
+		  
+		  <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                salary<span class="req">*</span>
+              </label>
+              <input ng-model="ctrl.salary" type="text" required autocomplete="off" name="salary"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                phone number<span class="req">*</span>
+              </label>
+              <input ng-model="ctrl.phoneNumber" type="text"required autocomplete="off" name="phoneNumber"/>
+            </div>
+          </div>
+		  
+          <div class="field-wrap">
+            <label>
+              account number<span class="req">*</span>
+            </label>
+            <input ng-model="ctrl.accountNumber" type="text"required autocomplete="off" name="accountNumber" />
+          </div>
+		  
+		  <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input ng-model="ctrl.emailid" type="email"required autocomplete="off" name="sEmailAddress"/>
+          </div>
+          
+		  
+		  
+		  <div class="field-wrap">
+            <label>
+              password<span class="req">*</span>
+            </label>
+            <input  ng-model="ctrl.password" type="password" required autocomplete="off" name="sPassword"/>
+          </div>
+          </div>
+            <button ng-click="ctrl.hirestaff()" class="button button-block"/>ADD STAFF</button>
+        </div>
+
+          <div class="field-wrap">
+		  <div ng-if="ctrl.isstaffhired">
+            <label>Hired staff successfully and staffid is {{ctrl.staffid}}</label>
+          </div>
+          </div>
+          <!--<p class="forgot"><a href="#">Forgot Password?</a></p>-->
+          
+
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
